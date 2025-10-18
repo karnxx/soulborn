@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://big02sosu26kf"]
+
+[ext_resource type="Script" uid="uid://cunbwns3r6w7n" path="res://script/playable/plr/plr.gd" id="1_0ra43"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ud4ta"]
+radius = 1.0
+height = 2.0
+
+[node name="plr" type="CharacterBody2D" groups=["plr"]]
+collision_layer = 131
+collision_mask = 131
+script = ExtResource("1_0ra43")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_ud4ta")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -31.0
+offset_right = 20.0
+offset_bottom = -8.0

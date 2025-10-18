@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cl8xn3q4l14xh"]
+
+[ext_resource type="Script" uid="uid://cljusvcjs5b7p" path="res://script/npc/dummy/dummy.gd" id="1_riquk"]
+[ext_resource type="Texture2D" uid="uid://bfc8syhofbr0e" path="res://assets/icons/godot/gicon.png" id="1_us6uw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_riquk"]
+size = Vector2(123.438, 114.948)
+
+[node name="dummy" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 8
+script = ExtResource("1_riquk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.27826e-07, 0.147847)
+scale = Vector2(0.25924, 0.28096)
+shape = SubResource("RectangleShape2D_riquk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.0627849, 0.0636552)
+texture = ExtResource("1_us6uw")
