@@ -1,5 +1,4 @@
 extends Node2D
-class_name Vanguardian
 
 @export var attack_cooldown := 0.25
 @export var secondary_cooldown := 1.0

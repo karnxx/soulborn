@@ -367,8 +367,7 @@ metadata/_custom_type_script = "uid://dtdnlj76fd86w"
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_8o6ur")
-animation = &"dash_stop"
-frame_progress = 0.446358
+animation = &"dash"
 
 [node name="collision" type="CollisionShape2D" parent="."]
 position = Vector2(0, -7)

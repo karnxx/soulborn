@@ -1,0 +1,107 @@
+[gd_scene load_steps=15 format=3 uid="uid://dfykvjl864h87"]
+
+[ext_resource type="Script" uid="uid://b5exscxa64job" path="res://scenes/objs/occulanchor.gd" id="1_jlcwe"]
+[ext_resource type="Texture2D" uid="uid://usr1014fuar" path="res://assets/plr/spritesheet/occultist/Run.png" id="1_yvoeg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1oavu"]
+atlas = ExtResource("1_yvoeg")
+region = Rect2(1584, 49, 66, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5gd6d"]
+atlas = ExtResource("1_yvoeg")
+region = Rect2(1650, 49, 66, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4x7t"]
+atlas = ExtResource("1_yvoeg")
+region = Rect2(1716, 49, 66, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0tom"]
+atlas = ExtResource("1_yvoeg")
+region = Rect2(1584, 96, 66, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xk4w"]
+atlas = ExtResource("1_yvoeg")
+region = Rect2(1650, 96, 66, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olylx"]
+atlas = ExtResource("1_yvoeg")
+region = Rect2(1716, 96, 66, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ke03"]
+atlas = ExtResource("1_yvoeg")
+region = Rect2(1782, 96, 66, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jlcwe"]
+atlas = ExtResource("1_yvoeg")
+region = Rect2(1320, 49, 66, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_43p6l"]
+atlas = ExtResource("1_yvoeg")
+region = Rect2(1386, 49, 66, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x27yv"]
+atlas = ExtResource("1_yvoeg")
+region = Rect2(1452, 49, 66, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0kev6"]
+atlas = ExtResource("1_yvoeg")
+region = Rect2(1518, 49, 66, 47)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1oavu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1oavu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5gd6d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d4x7t")
+}],
+"loop": true,
+"name": &"anchor1",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v0tom")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6xk4w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_olylx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ke03")
+}],
+"loop": true,
+"name": &"anchor2",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jlcwe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_43p6l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x27yv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0kev6")
+}],
+"loop": false,
+"name": &"ripple or smtn",
+"speed": 10.0
+}]
+
+[node name="occulanchor" type="Node2D"]
+script = ExtResource("1_jlcwe")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_1oavu")
+animation = &"ripple or smtn"
+autoplay = "ripple or smtn"

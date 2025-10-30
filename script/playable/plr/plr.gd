@@ -22,7 +22,7 @@ var current_class = null
 var mouse_target := Vector2.ZERO
 
 func _ready():
-	set_class(preload("res://scenes/playables/plr/classes/vanguardian.tscn"))
+	set_class(preload("res://scenes/playables/plr/classes/occultist.tscn"))
 
 func _physics_process(delta):
 	$Label.text = str(cur_health)
@@ -35,7 +35,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 func apply_grav(delta):
-	if not is_on_floor() and not is_dashing:
+	if not is_on_floor():
 		velocity.y += grav * delta
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = -jump
@@ -110,29 +110,44 @@ func set_class(class_scene: PackedScene):
 func rebound_from_attack(enemy_pos: Vector2):
 	if not current_class:
 		return
-	
-	var dir_to_enemy = enemy_pos - global_position
-	var horizontal_strength = clamp(momentum * 300, 150, 800)
-	var vertical_strength = clamp(momentum * 400, 250, 600)
-	
-	if dir_to_enemy.y > 20:
-		velocity.y = -(vertical_strength + 100 )
-		velocity.x = velocity.x * 0.5
-	elif dir_to_enemy.y < -20:
-		velocity.y = vertical_strength* 0.5
-		velocity.x = 0
-	else:
-		velocity.y = -vertical_strength * 0.2 
-		velocity.x = -sign(dir_to_enemy.x) * horizontal_strength
 
-	momentum = min(momentum + 2, momentum_max)
-	is_attacking = true
-	$CollisionShape2D.call_deferred("set_disabled", true)
-	await get_tree().create_timer(0.1).timeout
-	$CollisionShape2D.call_deferred("set_disabled", false)
-	
-	is_attacking = false
+	if current_class.name == "vanguardian":
+		var dir_to_enemy = enemy_pos - global_position
+		var horizontal_strength = clamp(momentum * 300, 150, 800)
+		var vertical_strength = clamp(momentum * 400, 250, 600)
 
+		if dir_to_enemy.y > 20:
+			velocity.y = -(vertical_strength + 100)
+			velocity.x *= 0.5
+		elif dir_to_enemy.y < -20:
+			velocity.y = vertical_strength * 0.5
+			velocity.x = 0
+		else:
+			velocity.y = -vertical_strength * 0.2
+			velocity.x = -sign(dir_to_enemy.x) * horizontal_strength
+
+		momentum = min(momentum + 2, momentum_max)
+		is_attacking = true
+		$CollisionShape2D.call_deferred("set_disabled", true)
+		await get_tree().create_timer(0.1).timeout
+		$CollisionShape2D.call_deferred("set_disabled", false)
+		is_attacking = false
+
+	elif current_class.name == "occultist":
+		await get_tree().create_timer(0.5).timeout
+		var dir = 1 if facing == "right" else -1
+		var horizontal_strength = clamp(momentum * 250, 150, 700) * 30.0
+
+		velocity.x = -dir * horizontal_strength
+
+		momentum = min(momentum + 3, momentum_max)
+		is_attacking = true
+		await get_tree().create_timer(0.1).timeout
+		is_attacking = false
+
+
+
+	
 func get_dmged(dmg, pos=null):
 	cur_health -= dmg
 	if pos != null:
