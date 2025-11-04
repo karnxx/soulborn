@@ -52,9 +52,7 @@ func attack():
 		return
 	can_atk = false
 	player.is_attacking = true
-
 	var attack_facing
-
 	var aniama
 	var andamain
 	if !player.is_on_floor() or Input.is_action_pressed("ui_accept"):

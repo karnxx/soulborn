@@ -20,9 +20,8 @@ var is_dashing := false
 var is_attacking := false
 var current_class = null
 var mouse_target := Vector2.ZERO
-
 func _ready():
-	set_class(preload("res://scenes/playables/plr/classes/occultist.tscn"))
+	set_class(preload("res://scenes/playables/plr/classes/revenant.tscn"))
 
 func _physics_process(delta):
 	$Label.text = str(cur_health)
