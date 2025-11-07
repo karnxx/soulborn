@@ -2,7 +2,7 @@ extends Node2D
 
 @export var attack_cooldown := 0.25
 @export var secondary_cooldown := 1.0
-@export var max_health := 200
+@export var max_health := 160
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 var player: CharacterBody2D
 var anchors := []

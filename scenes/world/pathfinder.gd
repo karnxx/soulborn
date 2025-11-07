@@ -52,7 +52,7 @@ func get_navigation_path(from_pos: Vector2, to_pos: Vector2) -> PackedVector2Arr
 	var end_id = astar.get_closest_point(to_pos)
 	return astar.get_point_path(start_id, end_id)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	queue_redraw()
 
 func _on_draw() -> void:

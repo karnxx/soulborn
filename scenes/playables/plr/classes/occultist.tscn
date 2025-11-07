@@ -1,7 +1,7 @@
 [gd_scene load_steps=81 format=3 uid="uid://bo6mfqdtgchhi"]
 
 [ext_resource type="Script" uid="uid://cu50if2drvvfg" path="res://script/playable/plr/classes/occultist.gd" id="1_60at1"]
-[ext_resource type="Texture2D" uid="uid://usr1014fuar" path="res://assets/plr/spritesheet/occultist/Run.png" id="1_ihm50"]
+[ext_resource type="Texture2D" uid="uid://usr1014fuar" path="res://scenes/Run.png" id="1_ihm50"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3wu5c"]
 atlas = ExtResource("1_ihm50")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://dfykvjl864h87"]
 
 [ext_resource type="Script" uid="uid://b5exscxa64job" path="res://scenes/objs/occulanchor.gd" id="1_jlcwe"]
-[ext_resource type="Texture2D" uid="uid://usr1014fuar" path="res://assets/plr/spritesheet/occultist/Run.png" id="1_yvoeg"]
+[ext_resource type="Texture2D" uid="uid://usr1014fuar" path="res://scenes/Run.png" id="1_yvoeg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1oavu"]
 atlas = ExtResource("1_yvoeg")

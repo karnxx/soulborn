@@ -11,7 +11,7 @@ var can_dash := true
 var can_secondary := true
 var is_dashing := false
 var mouse_target := Vector2.ZERO
-var max_health := 200
+var max_health := 190
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 var player: CharacterBody2D
 

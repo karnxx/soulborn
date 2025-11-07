@@ -20,6 +20,7 @@ var is_dashing := false
 var is_attacking := false
 var current_class = null
 var mouse_target := Vector2.ZERO
+var can_grav = true
 func _ready():
 	set_class(preload("res://scenes/playables/plr/classes/revenant.tscn"))
 
@@ -34,7 +35,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 func apply_grav(delta):
-	if not is_on_floor():
+	if not is_on_floor() and can_grav:
 		velocity.y += grav * delta
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = -jump
@@ -148,6 +149,7 @@ func rebound_from_attack(enemy_pos: Vector2):
 
 	
 func get_dmged(dmg, pos=null):
+	
 	cur_health -= dmg
 	if pos != null:
 		velocity.x = (global_position - pos).normalized().x * 300.0
